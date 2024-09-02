@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="mb-3">
+    <form action="{% url 'polls:email' name=name password=password %}" method="post">
+        {% csrf_token %}
+        {{ form | crispy}}
+        <input type="submit" value="Submit">
+    </form>
+        {% if message %}
+    <ul class="message">
+        {{ message }}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

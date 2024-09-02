@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {% load crispy_forms_tags %}
+        {% crispy form form.helper %}
+        {% if message %}
+        <ul class="message">
+            {{message}}
+        </ul>
+        {% endif %}
+{% endblock %}

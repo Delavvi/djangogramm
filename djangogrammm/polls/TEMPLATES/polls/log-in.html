@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mb-3">
+        <h2 id="login">Login to Your Account</h2>
+        {% load crispy_forms_tags %}
+        {% crispy form form.helper %}
+        <p>Don't have an account? <a href="{% url 'polls:register'%}">Register here</a></p>
+        {% if message %}
+        <ul class="message">
+            {{ message }}
+        </ul>
+        {% endif %}
+    <div>
+{% endblock %}

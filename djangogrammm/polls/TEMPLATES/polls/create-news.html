@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+        {% load crispy_forms_tags %}
+        <form action="{% url 'polls:create-news' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form |crispy}}
+            <input type="submit" value="Submit">
+        </form>
+{% endblock %}
